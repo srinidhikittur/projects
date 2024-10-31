@@ -1,0 +1,223 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+header{
+    width:100%;
+    max-width:100%;
+    padding-left:30px;
+    height:50px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+    background-color: rgb(207, 202, 202);
+
+}
+header nav a{
+    color:#fff;
+    margin-right: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    transition: 0.2s;
+   text-decoration: none;
+}
+a.active{
+    background: green;
+    border-radius: 2px;
+}
+a:hover{
+    background: green;
+    border-radius: 2px;
+}
+
+
+
+
+/*carasoul*/
+
+.carasoul{
+    width: 100vw;
+    height: 100vh;
+    margin-top: -50px;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.carasoul .imgs .photos{
+    width: 180px;
+    height: 250px;
+    position: absolute;
+    top: 80%;
+    transform: translateY(-70%);
+    left: 70%;
+    box-shadow: 0 25px 50px rgba(0,0 ,0 ,0.3 );
+    background-position: 50% 50%;
+    background-size: cover;
+    z-index: 100;
+    transition: 1s;
+    border-radius: 8px;
+    
+}
+.carasoul .imgs .photos:nth-child(1),
+.carasoul .imgs .photos:nth-child(2){
+    top: 0;
+    left:0;
+    transform:translate(0,0);
+    border-radius: 3px;
+    width: 100%;
+    height: 100%;
+}
+
+.carasoul .imgs .photos:nth-child(3){
+    left:67%;
+}
+.carasoul .imgs .photos:nth-child(4){
+    left:calc(67% + 200px);
+}
+.carasoul .imgs .photos:nth-child(5){
+    left:calc(67% + 400px);
+}
+.carasoul .imgs .photos:nth-child(6){
+    left:calc(67% + 600px);
+}
+.carasoul .imgs .photos:nth-child(7){
+    left:calc(67% + 800px);
+}
+.carasoul .imgs .photos:nth-child(8){
+    left:calc(67% + 1000px);
+}.carasoul .imgs .photos:nth-child(9){
+    left:calc(67% + 1200px);
+}.carasoul .imgs .photos:nth-child(10){
+    left:calc(67% +1400px);
+}.carasoul .imgs .photos:nth-child(11){
+    left:calc(67% + 1600px);
+    opacity: 0;
+}
+
+
+.imgs .info{
+    position: absolute;
+    top: 50%;
+    left: 100px;
+  
+    transform: translateY(-50%);
+    width: 400px;
+    text-align: left;
+     color: #fff;
+     display: none;
+}
+.imgs .photos:nth-child(2) .info{
+    display: block;
+}
+
+.info .title{
+    font-size: 100px;
+    text-transform: uppercase;
+    color: aquamarine;
+    font-weight: bold;
+    line-height: 1;
+    padding-top: 25%;
+    animation: animate 1s   ;
+}
+.info .about{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1;
+    
+    animation: animate 1s ease-in-out 1.3s 1 forwards;
+    
+}
+@keyframes animate{
+    from{
+        opacity: 0;
+        transform: translate(0,100px);
+        filter:blur(33px);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0);
+        filter:blur(0);
+    }
+}
+
+.arrows{
+    position: absolute;
+    top:80%;
+    right:30%;
+    z-index: 100;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap:10px;
+    align-items: center;
+}
+.arrows button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: darkgreen;
+    border: none;
+    outline: none;
+    font-size: 30px;
+    font-family: monospace;
+    font-weight: bold;
+    transition: 1s;
+    cursor: pointer;
+}
+.arrows button:hover{
+    background-color: rgb(161, 161, 227);
+    color:#fff
+}
+.carasoul .timer{
+    position: absolute;
+    z-index: 1000;
+    width: 0%;
+    height: 4px;
+    background-color: darkgreen;
+    left:0;
+    top:0;
+    animation: timer 7s linear  1  forwards;
+}
+@keyframes timer{
+    from{
+        width: 0%;}
+    to{width: 100%;}
+}
+@media  screen and (max-width: 999px){
+    header{
+        padding-left: 50px;
+    }
+    .imgs .info{
+        left: 50px;
+
+    }
+    .imgs .title{
+        font-size: 70px;
+    }
+}
+
+@media screen and(max-width: 699px){
+    header a{
+        font-size: 14px;
+        margin-right: 0;
+    }
+    .info .content{
+        top:40%;
+    }
+    .info .arrows button,.imgs .about{
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+    
+
+    
+
